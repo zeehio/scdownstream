@@ -48,7 +48,7 @@ if symbol_col != "index" and symbol_col:
     if symbol_col not in adata_celltypist.var.columns:
         raise ValueError(f"Symbol column {symbol_col} not found in adata.var.columns")
     adata_celltypist.var_names = adata_celltypist.var[symbol_col]
-
+adata_celltypist.var_names = adata_celltypist.var_names.astype(str)
 df_list = []
 
 for model in models:
